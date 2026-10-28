@@ -85,17 +85,27 @@ Sau làm sạch, bảng Books vẫn còn một số giá trị năm xuất bản
 
 ### 8. Trực quan hóa và nhận xét
 
-#### 8.1. Biểu đồ phân bố điểm đánh giá
+#### 8.1. Biểu đồ phân bố điểm đánh giá sách
 
-Biểu đồ thể hiện số lượt đánh giá theo từng mức điểm từ 1 đến 10 sau khi loại các lượt có điểm bằng 0. Qua biểu đồ, có thể quan sát mức điểm nào xuất hiện nhiều hơn và đánh giá mức độ phân bố điểm của người dùng.
+Biểu đồ thể hiện số lượt đánh giá tương ứng với từng mức điểm từ 1 đến 10 sau khi loại bỏ các lượt đánh giá có điểm bằng 0. Qua biểu đồ, có thể thấy điểm 8 có số lượt đánh giá cao nhất, tiếp theo là điểm 10 và điểm 7. Trong khi đó, các mức điểm thấp từ 1 đến 3 có số lượt đánh giá tương đối ít.
+
+Kết quả cho thấy các mức điểm cao xuất hiện nhiều hơn các mức điểm thấp trong tập dữ liệu đã xử lý. Đây là thông tin hữu ích để tìm hiểu hành vi đánh giá của người dùng và chuẩn bị dữ liệu cho hệ thống gợi ý sách. Tuy nhiên, kết quả chỉ phản ánh tập dữ liệu đang phân tích, không đại diện cho toàn bộ độc giả.
 
 #### 8.2. Biểu đồ Top 10 sách có nhiều lượt đánh giá nhất
 
-Biểu đồ thể hiện mười cuốn sách có số lượt đánh giá cao nhất trong tập dữ liệu sau xử lý. Các sách này có mức độ tương tác cao trong dữ liệu, tuy nhiên số lượt đánh giá nhiều không đồng nghĩa chắc chắn với chất lượng sách cao.
+Biểu đồ thể hiện 10 cuốn sách có số lượt đánh giá cao nhất trong tập dữ liệu sau làm sạch. Trong đó, *The Lovely Bones: A Novel* đứng đầu, tiếp theo là *Wild Animus* và *The Da Vinci Code*. Các cuốn sách còn lại trong danh sách cũng nhận được nhiều lượt đánh giá từ người dùng.
 
-#### 8.3. Biểu đồ phân bố năm xuất bản
+Kết quả cho thấy mức độ tương tác giữa người dùng và các đầu sách có sự khác biệt. Một số cuốn sách thu hút nhiều lượt đánh giá hơn những cuốn khác, do đó có thể được sử dụng để xây dựng phương pháp gợi ý dựa trên mức độ phổ biến. Tuy nhiên, số lượt đánh giá nhiều không đồng nghĩa với điểm đánh giá trung bình cao hoặc chất lượng sách tốt hơn.
 
-Biểu đồ thể hiện sự phân bố số lượng sách theo năm xuất bản. Biểu đồ hỗ trợ nhận biết các khoảng thời gian có nhiều sách trong tập dữ liệu. Những năm xuất bản bị thiếu hoặc không hợp lệ không được sử dụng như năm hợp lệ trong biểu đồ.
+#### 8.3. Biểu đồ phân bố năm xuất bản sách
+
+Biểu đồ thể hiện số lượng sách theo năm xuất bản sau khi các giá trị năm không hợp lệ được chuyển thành giá trị thiếu. Có thể quan sát thấy số lượng sách tập trung chủ yếu ở giai đoạn cuối thập niên 1990 và đầu những năm 2000. Trong khi đó, số lượng sách ở các năm xa hơn thấp hơn đáng kể.
+
+Kết quả giúp nhận biết đặc điểm thời gian của tập dữ liệu. Tuy nhiên, cần lưu ý rằng dữ liệu năm xuất bản bị thiếu hoặc không hợp lệ không được thể hiện trong biểu đồ. Vì vậy, biểu đồ phản ánh phân bố của các bản ghi có năm xuất bản hợp lệ, không nhất thiết phản ánh đầy đủ lịch sử xuất bản của tất cả sách trong bộ dữ liệu.
+
+#### 8.4. Tổng kết kết quả trực quan hóa
+
+Ba biểu đồ cung cấp cái nhìn tổng quan về đặc điểm của dữ liệu Book-Crossing sau khi làm sạch. Biểu đồ thứ nhất cho thấy phân bố điểm đánh giá; biểu đồ thứ hai xác định những cuốn sách có nhiều lượt đánh giá; biểu đồ thứ ba mô tả phân bố năm xuất bản. Các kết quả này hỗ trợ quá trình tìm hiểu dữ liệu và là cơ sở cho các bước xây dựng, kiểm thử hệ thống gợi ý sách tiếp theo.
 
 ### 9. Sản phẩm bàn giao
 
@@ -113,5 +123,3 @@ Hai tệp CSV sau xử lý được bàn giao cho thành viên Machine Learning 
 Qua quá trình khai thác dữ liệu, bộ Book-Crossing đã được kiểm tra, làm sạch và phân tích bằng Python. Các vấn đề về dữ liệu thiếu, năm xuất bản không hợp lệ, điểm đánh giá bằng 0 và bản ghi lặp theo tiêu chí đã chọn được xem xét trong quá trình tiền xử lý.
 
 Các biểu đồ cung cấp cái nhìn tổng quan về phân bố điểm đánh giá, những sách có nhiều lượt đánh giá và phân bố năm xuất bản. Dữ liệu sau xử lý là cơ sở để nhóm tiếp tục xây dựng, kiểm thử và đánh giá hệ thống Book Recommender System.
-
-**Lưu ý:** Các con số trong báo cáo cần được đối chiếu với kết quả chạy cuối cùng trong Notebook trước khi nộp.
